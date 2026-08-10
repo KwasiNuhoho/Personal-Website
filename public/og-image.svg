@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0A0E14"/>
+  <defs>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#232B3A"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <text x="80" y="260" font-family="Space Grotesk, Arial, sans-serif" font-size="64" font-weight="700" fill="#E7EBF3">Cloud &amp; Cybersecurity</text>
+  <text x="80" y="335" font-family="Space Grotesk, Arial, sans-serif" font-size="64" font-weight="700" fill="#F0A94E">Engineer</text>
+  <text x="80" y="410" font-family="JetBrains Mono, monospace" font-size="24" fill="#8B96AA">Cloud infrastructure &#8226; Security &#8226; Networking &#8226; Automation</text>
+  <circle cx="82" cy="470" r="6" fill="#4ADE80"/>
+  <text x="100" y="478" font-family="JetBrains Mono, monospace" font-size="20" fill="#8B96AA">Open to entry-level opportunities</text>
+</svg>

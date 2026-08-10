@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://your-domain.netlify.app/</loc></url>
+  <url><loc>https://your-domain.netlify.app/about</loc></url>
+  <url><loc>https://your-domain.netlify.app/projects</loc></url>
+  <url><loc>https://your-domain.netlify.app/blog</loc></url>
+  <url><loc>https://your-domain.netlify.app/resume</loc></url>
+  <url><loc>https://your-domain.netlify.app/contact</loc></url>
+  <url><loc>https://your-domain.netlify.app/projects/azure-infrastructure-lab</loc></url>
+  <url><loc>https://your-domain.netlify.app/projects/active-directory-homelab</loc></url>
+  <url><loc>https://your-domain.netlify.app/projects/security-monitoring-lab</loc></url>
+  <url><loc>https://your-domain.netlify.app/projects/security-automation-threat-intelligence</loc></url>
+  <url><loc>https://your-domain.netlify.app/blog/azure-hub-and-spoke-networking</loc></url>
+  <url><loc>https://your-domain.netlify.app/blog/building-an-active-directory-homelab</loc></url>
+  <url><loc>https://your-domain.netlify.app/blog/getting-started-with-wazuh-siem</loc></url>
+</urlset>
