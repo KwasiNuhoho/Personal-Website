@@ -240,12 +240,6 @@ However, after deploying resources without tags, I navigated to **Policy → Com
 2. **Assignment Status:** I navigated to **Policy → Assignments**. I realized that while I had created the policy definition, I had forgotten to create a policy assignment to bind the rule to the subscription scope.
 3. **Evaluating Compliance State:** After assigning the policy to Azure subscription 1, the policy finally appeared in the compliance dashboard. However, its state showed as **"Not started"**.
 
-### Evidence from the Azure Portal
-
-![Azure Policy compliance view](/portfolio/src/images/Policy_Assignment.png)
-
-![Azure Policy assignment/compliance view](captstone_assets/page-08-image-1.png)
-
 It finally appeared in the policy compliance section; however, since I just assigned it, it says the compliance state is **not started**.
 
 ### Diagnosis
@@ -280,11 +274,8 @@ Connecting a policy definition to a scope via an **Assignment** is required befo
 
 Azure RBAC operates on a structured hierarchy:
 
-```mermaid
-flowchart TD
-    A["Management Group"] --> B["Subscription"]
-    B --> C["Resource Group"]
-    C --> D["Resource"]
+```text
+    Management Group --> Subscription --> Resource Group --> Resource
 ```
 
 Permissions applied at a higher scope are inherited by lower scopes.
@@ -297,7 +288,6 @@ By assigning `grp-developers` at the **Resource Group** scope (`rg-compute`), de
 
 To prevent accidental deletion of core networking infrastructure, I applied a **CanNotDelete** resource lock (`Network_lock`) directly to `rg-network`.
 
-![Network resource lock](captstone_assets/page-11-image-1.png)
 
 ## Security Considerations
 
