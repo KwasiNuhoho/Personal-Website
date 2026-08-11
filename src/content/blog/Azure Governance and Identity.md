@@ -22,28 +22,6 @@ Here is how I implemented the identity and governance foundation, the unexpected
 
 Before configuring network rules or virtual machines, I built an administrative boundary that enforces operational constraints.
 
-The foundation consists of:
-
-- A structured **Management Group hierarchy** to group subscriptions under a central administrative boundary.
-- Standardized Resource Groups (`rg-network`, `rg-compute`, `rg-storage`, `rg-identity`, `rg-monitoring`, `rg-backup`) to organize resources by lifecycle and management responsibility.
-- Entra ID groups and default RBAC assignments to grant permissions at specific scopes rather than subscription-wide.
-- A **Custom RBAC Role** granting operational control over VMs (start and restart) while preventing modifications or deallocations.
-- A **Cost Budget** with email alerts to catch spending before it escalates.
-- An **Azure Policy** designed to enforce an `Environment` tag (`Prod` or `Dev`) on resource groups.
-- A **CanNotDelete Resource Lock** applied to critical networking infrastructure.
-
-## Architecture & Governance Design
-
-### Management Hierarchy
-
-When I created my Azure account, the root level started with the default Tenant Root Group. I created a custom Management Group named **Esmee Corporation (`mg-esmee-corp`)** directly under the Tenant Root Group, moving my primary subscription (**Azure subscription 1**) into it.
-
-This creates a logical boundary where policies and permissions can be applied at scale.
-
-### Management Group Flow
-
-The original document includes a screenshot of the hierarchy. For a GitHub-hosted Markdown document, Mermaid provides a cleaner, searchable, and maintainable representation:
-
 ```text
 +--------------------------------------------------+
 |              Tenant Root Group                   |
@@ -57,28 +35,37 @@ The original document includes a screenshot of the hierarchy. For a GitHub-hoste
 +------------------------+-------------------------+
                          |
                          v
-+--------------------------------------------------+
-|              Azure Subscription 1                |
-+---+----------+----------+----------+-------------+
-    |          |          |          |
-    v          v          v          v
-+---------+ +---------+ +---------+ +---------+
-|rg-      | |rg-      | |rg-      | |rg-      |
-|network  | |compute  | |storage  | |identity |
-+---------+ +---------+ +---------+ +---------+
-    |
-    +-------------------+-------------------+
-                        |                   |
-                        v                   v
-                 +-----------+       +-----------+
-                 | Monitoring|       |  Backup   |
-                 +-----------+       +-----------+
++---------------------------------------------------------------------------+
+|              Azure Subscription 1                                         |
++---+----------+----------+----------+---------------+--------------+-------+
+    |          |          |          |               |              |
+    v          v          v          v               v              v
++---------+ +---------+ +---------+ +---------+ +------------+ +-----------+
+|rg-      | |rg-      | |rg-      | |rg-      | |rg-         | |rg-        |
+|network  | |compute  | |storage  | |identity | |monitoring  | |backup     |
++---------+ +---------+ +---------+ +---------+ +------------+ +-----------+
+
 
 ```
 
-#### Original Azure Portal View
+The foundation consists of:
 
-![Azure Management Group hierarchy](captstone_assets/page-01-image-1.png)
+- A structured **Management Group hierarchy** to group subscriptions under a central administrative boundary.
+- Standardized Resource Groups (`rg-network`, `rg-compute`, `rg-storage`, `rg-identity`, `rg-monitoring`, `rg-backup`) to organize resources by lifecycle and management responsibility.
+- **Entra ID groups and default RBAC assignments** to grant permissions at specific scopes rather than subscription-wide.
+- A **Custom RBAC Role** granting operational control over VMs (start and restart) while preventing modifications or deallocations.
+- A **Cost Budget** with email alerts to catch spending before it escalates.
+- An **Azure Policy** designed to enforce an `Environment` tag (`Prod` or `Dev`) on resource groups.
+- A **CanNotDelete Resource Lock** applied to critical networking infrastructure.
+
+## Architecture & Governance Design
+
+### Management Hierarchy
+
+When I created my Azure account, the root level started with the default Tenant Root Group. I created a custom Management Group named **Esmee Corporation (`mg-esmee-corp`)** directly under the Tenant Root Group, moving my primary subscription (**Azure subscription 1**) into it.
+
+This creates a logical boundary where policies and permissions can be applied at scale.
+
 
 ## Creating Resource Groups
 
@@ -110,13 +97,13 @@ Where the resource names were `rg-network`, `rg-compute`, etc., as in my project
 Look up the unique Object ID for your group by its display name:
 
 ```bash
-az ad group show --group "rg-compute" --query id -o tsv
+az ad group show --group "grp-developers" --query id -o tsv
 ```
 
-Example output:
+Example output for developers group:
 
 ```text
-d3f3c115-61b8-48af-b1e1-73219df81775
+d3f3c115-61b8-48af-****-73219df8****
 ```
 
 ### Step 2
@@ -125,10 +112,10 @@ To actually assign the role, use the command below:
 
 ```bash
 az role assignment create \
-  --assignee-object-id "placeholder for object id" \
+  --assignee-object-id "d3f3c115-61b8-48af-****-73219df8****" \
   --assignee-principal-type Group \
   --role "Contributor" \
-  --scope "/subscriptions/12345.../resourceGroups/my-rg"
+  --scope "/subscriptions/12345.../resourceGroups/rg-compute"
 ```
 
 | Parameter / Component | Description |
@@ -255,7 +242,7 @@ However, after deploying resources without tags, I navigated to **Policy → Com
 
 ### Evidence from the Azure Portal
 
-![Azure Policy compliance view](captstone_assets/page-07-image-1.png)
+![Azure Policy compliance view](/portfolio/src/images/Policy_Assignment.png)
 
 ![Azure Policy assignment/compliance view](captstone_assets/page-08-image-1.png)
 
