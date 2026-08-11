@@ -73,7 +73,7 @@ export function BlogPost() {
           </span>
         </div>
 
-        <div className="prose-article prose prose-invert dark:prose-invert max-w-none mt-10 prose-headings:font-display prose-a:text-[var(--color-accent-2)] prose-strong:text-[var(--color-text)]">
+        <div className="prose-article prose max-w-none mt-10 prose-headings:font-display prose-a:text-[var(--color-accent-2)] prose-strong:text-[var(--color-text)] dark:prose-invert">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeSlug]}
