@@ -15,9 +15,12 @@ export function AboutSummary() {
         </div>
         <div>
           <p className="text-base leading-relaxed text-[var(--color-text-muted)]">
-            [PROFESSIONAL SUMMARY — a few sentences on your background, how you got into cloud and
-            security, and what kind of role you're looking for. Keep it honest and specific rather
-            than a list of buzzwords.]
+            I’m a telecommunications and infrastructure engineer with an MSc in Communication Technologies & System Design from DTU, specializing in Cloud and Cybersecurity. 
+            My experience spans IT infrastructure, networking, electronic systems, cloud technologies, and hands-on technical troubleshooting. 
+            I enjoy understanding how systems work, solving problems methodically, and using automation to make infrastructure more reliable and efficient. 
+            I’ve worked across environments ranging from network and end-user IT support to electronic production and testing, while building hands-on experience with Microsoft Azure, Windows Server, Active Directory, Linux, networking, PowerShell, Python, and infrastructure automation. 
+            I’m particularly interested in infrastructure, cloud operations, networking, production IT, platform engineering, and connected systems.
+            I’m driven by curiosity and continuous learning, and I enjoy turning what I learn into practical projects that deepen my understanding of real-world systems.
           </p>
           <Link
             to="/about"

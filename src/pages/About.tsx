@@ -19,11 +19,20 @@ export function About() {
 
         <section className="mt-10 space-y-5 text-base leading-relaxed text-[var(--color-text-muted)]">
           <h2 className="font-display text-lg font-semibold text-[var(--color-text)]">Introduction</h2>
-          <p>
-            [PROFESSIONAL INTRODUCTION — 2-4 sentences on who you are, how you got interested in cloud
-            and cybersecurity, and what you're focused on right now. Keep it grounded and specific:
-            avoid words like "expert" or "guru" — let the projects speak for that.]
-          </p>
+           <p>
+    I’m a telecommunications and infrastructure engineer with an MSc in Communication Technologies
+    & System Design from DTU. My work has focused on cloud, networking, and infrastructure systems.
+  </p>
+
+  <p>
+    I enjoy understanding how systems work, solving problems methodically, and using automation to
+    make technical environments more reliable and efficient.
+  </p>
+
+  <p>
+    I’ve worked across support, production, and hands-on technical environments, with a strong interest
+    in cloud operations, cybersecurity, and connected systems.
+  </p>
         </section>
 
         <section className="mt-10">

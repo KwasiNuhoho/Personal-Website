@@ -1,7 +1,7 @@
 ---
 title: "Azure Networking"
 description: "Implementing secure networking principles."
-date: "2026-11-08"
+date: "2026-08-11"
 category: "Cloud Infrastructure"
 tags:
   - Azure Virtual Networks

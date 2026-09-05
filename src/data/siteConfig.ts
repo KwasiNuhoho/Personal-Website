@@ -10,13 +10,13 @@ export const siteConfig = {
   tagline: 'Building and securing infrastructure, one lab at a time.',
   description:
     'Entry-level Cloud & Cybersecurity professional working across Azure infrastructure, security monitoring, networking and automation. This site documents projects, labs and technical writing.',
-  location: '[YOUR CITY, COUNTRY]',
+  location: 'Copenhagen, Denmark',
   availability: 'Open to entry-level Cloud / Cybersecurity roles',
 
   url: 'https://your-domain.netlify.app',
-  github: 'https://github.com/[YOUR-GITHUB-USERNAME]',
-  linkedin: 'https://linkedin.com/in/[YOUR-LINKEDIN]',
-  email: '[YOUR-EMAIL]@example.com',
+  github: 'https://github.com/KwasiNuhoho',
+  linkedin: 'https://linkedin.com/in/dodzi-kwasi-nuhoho',
+  email: 'dnuhoho2000@outlook.com',
 
   resumePdfPath: '/resume.pdf',
 
