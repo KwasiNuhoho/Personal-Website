@@ -8,10 +8,12 @@ tags:
   - Windows Server
   - VirtualBox
   - Identity
-featured: true
+featured: false
+draft: true
 ---
 
-> This is a sample post. Replace the content below with what you actually built, including real screenshots and specifics from your own lab.
+> Draft. This came with the site template and is a placeholder, not my own write-up.
+> Replace it with what I actually built, then remove `draft: true` to publish.
 
 ## Why build this
 

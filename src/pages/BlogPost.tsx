@@ -58,7 +58,9 @@ export function BlogPost() {
           <ArrowLeft className="h-3.5 w-3.5" /> All articles
         </Link>
 
-        <Badge variant="accent">{post.frontmatter.category}</Badge>
+        <div className="mt-6">
+          <Badge variant="accent">{post.frontmatter.category}</Badge>
+        </div>
 
         <h1 className="mt-4 font-display text-3xl sm:text-4xl font-semibold text-[var(--color-text)] text-balance">
           {post.frontmatter.title}

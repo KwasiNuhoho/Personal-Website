@@ -1,6 +1,6 @@
 ---
-title: "Azure Networking"
-description: "Implementing secure networking principles."
+title: "Azure Networking and Secure Access"
+description: "Day 2 — hub-and-spoke virtual networks, NSGs, user-defined routes, and Bastion for administrative access without public IPs."
 date: "2026-08-11"
 category: "Cloud Infrastructure"
 tags:
@@ -10,8 +10,6 @@ tags:
   - User Defined Routes
 featured: true
 ---
-
-# Building Core Networking and Secure Access in Microsoft Azure --- Day 2 of My Azure Infrastructure Project
 
 After establishing governance and identity controls on Day 1, Day 2 of
 my Azure infrastructure project focused on one of the most important

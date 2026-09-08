@@ -28,7 +28,7 @@ export function Hero() {
         <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:items-center">
           <Link
             to="/projects"
-            className="inline-flex items-center justify-center gap-2 rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-mono text-sm font-medium text-[#12130f] hover:brightness-110 transition"
+            className="inline-flex items-center justify-center gap-2 rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-mono text-sm font-medium text-[var(--color-accent-contrast)] hover:brightness-110 transition"
           >
             <FolderGit2 className="h-4 w-4" /> View My Projects
           </Link>

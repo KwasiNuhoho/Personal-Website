@@ -1,6 +1,6 @@
 ---
-title: "Azure Compute"
-description: "Setting up Compute and Application Delivery in Azure."
+title: "Azure Compute and Application Delivery"
+description: "Day 3 — deploying virtual machines into the network architecture and putting an Application Gateway in front of them."
 date: "2026-08-12"
 category: "Cloud Infrastructure"
 tags:
@@ -10,8 +10,6 @@ tags:
   - User Defined Routes
 featured: true
 ---
-
-# Day 3: Compute and Application Delivery in Azure
 
 After completing the core networking and secure-access configuration on
 Day 2, Day 3 of my Azure project moved into the **compute layer**.

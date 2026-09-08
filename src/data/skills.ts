@@ -9,6 +9,9 @@ export interface SkillCategory {
 /**
  * Only list technologies you can actually speak to in an interview.
  * Add or remove entries from the `skills` arrays as your experience changes.
+ *
+ * Removed from the original template because they aren't on the CV or in any
+ * project here: Wazuh, Splunk, Ansible. Add them back if that's wrong.
  */
 export const skillCategories: SkillCategory[] = [
   {
@@ -18,13 +21,15 @@ export const skillCategories: SkillCategory[] = [
     description: 'Deploying and operating infrastructure on Microsoft Azure.',
     skills: [
       'Microsoft Azure',
+      'Microsoft Entra ID',
+      'Azure Policy',
+      'Azure RBAC',
       'Azure Virtual Networks',
       'Azure Virtual Machines',
       'Azure Storage',
       'Azure Monitor',
-      'Azure Entra ID',
-      'Azure Networking',
-      'Infrastructure as Code',
+      'Bicep / ARM',
+      'Microsoft 365',
     ],
   },
   {
@@ -33,15 +38,15 @@ export const skillCategories: SkillCategory[] = [
     eyebrow: 'cat security.json',
     description: 'Detecting, investigating and responding to security events.',
     skills: [
-      'SIEM',
-      'SOAR',
-      'Threat Intelligence',
-      'Incident Response',
-      'Security Automation',
-      'Wazuh',
       'Microsoft Sentinel',
-      'Splunk',
+      'Log Analytics / KQL',
+      'Incident Response',
+      'Threat Intelligence',
       'MISP',
+      'CACAO Playbooks',
+      'Vulnerability Assessment',
+      'Nmap / Nessus / Metasploit',
+      'Wireshark',
     ],
   },
   {
@@ -51,13 +56,13 @@ export const skillCategories: SkillCategory[] = [
     description: 'The fundamentals underneath every cloud and security workload.',
     skills: [
       'TCP/IP',
-      'Network Security',
-      'Routing',
+      'Routing & Switching',
+      'DNS',
+      'Network Security Groups',
       'Firewalls',
       'VPNs',
-      'DNS',
-      'Active Directory',
       'Windows Server',
+      'Active Directory',
       'Linux',
     ],
   },
@@ -66,6 +71,6 @@ export const skillCategories: SkillCategory[] = [
     label: 'Automation & DevOps',
     eyebrow: 'cat automation.json',
     description: 'Scripting and pipelines that make infrastructure repeatable.',
-    skills: ['Python', 'Bash', 'Docker', 'Kubernetes', 'Git', 'CI/CD', 'Ansible', 'ARM / Bicep'],
+    skills: ['PowerShell', 'Bash', 'Python', 'SQL', 'Docker', 'Kubernetes', 'Git', 'CI/CD'],
   },
 ];

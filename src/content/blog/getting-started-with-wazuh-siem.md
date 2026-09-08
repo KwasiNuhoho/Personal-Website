@@ -8,9 +8,11 @@ tags:
   - Wazuh
   - Detection
 featured: false
+draft: true
 ---
 
-> This is a sample post. Replace the content below with the specifics of your own monitoring lab.
+> Draft. This came with the site template and is a placeholder, not my own write-up.
+> Replace it with the specifics of my own monitoring lab, then remove `draft: true` to publish.
 
 ## Why a SIEM lab
 

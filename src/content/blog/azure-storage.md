@@ -1,6 +1,6 @@
 ---
-title: "Azure Storage"
-description: "Building Secure Azure Storage with Private Endpoints and Lifecycle Management."
+title: "Azure Storage and Private Endpoints"
+description: "Day 4 — storage security, data protection, lifecycle management, and private connectivity with private endpoints."
 date: "2026-08-13"
 category: "Cloud Infrastructure"
 tags:
@@ -10,7 +10,6 @@ tags:
   - Service Endpoints
 featured: true
 ---
-# Day 4: Building Secure Azure Storage with Private Endpoints and Lifecycle Management
 
 After working on compute during Day 3, Day 4 of my Azure infrastructure
 project shifted toward **storage security, data protection, lifecycle

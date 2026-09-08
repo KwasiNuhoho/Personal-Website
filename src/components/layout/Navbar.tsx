@@ -42,7 +42,7 @@ export function Navbar() {
           <a
             href={siteConfig.resumePdfPath}
             download
-            className="inline-flex items-center gap-2 rounded-md bg-[var(--color-accent)] px-4 py-2 font-mono text-sm font-medium text-[#12130f] hover:brightness-110 transition"
+            className="inline-flex items-center gap-2 rounded-md bg-[var(--color-accent)] px-4 py-2 font-mono text-sm font-medium text-[var(--color-accent-contrast)] hover:brightness-110 transition"
           >
             <Download className="h-4 w-4" aria-hidden="true" />
             Resume
@@ -90,7 +90,7 @@ export function Navbar() {
             href={siteConfig.resumePdfPath}
             download
             onClick={() => setOpen(false)}
-            className="inline-flex items-center justify-center gap-2 rounded-md bg-[var(--color-accent)] px-4 py-2.5 font-mono text-sm font-medium text-[#12130f]"
+            className="inline-flex items-center justify-center gap-2 rounded-md bg-[var(--color-accent)] px-4 py-2.5 font-mono text-sm font-medium text-[var(--color-accent-contrast)]"
           >
             <Download className="h-4 w-4" aria-hidden="true" />
             Download Resume

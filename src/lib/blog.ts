@@ -7,6 +7,8 @@ export interface BlogFrontmatter {
   category: string;
   tags: string[];
   featured?: boolean;
+  /** Drafts stay in the repo but are hidden from the site. */
+  draft?: boolean;
   [key: string]: unknown;
 }
 
@@ -37,6 +39,10 @@ function estimateReadingTime(content: string): string {
   return `${minutes} min read`;
 }
 
+// Drafts are visible while running `npm run dev` so you can preview them,
+// and stripped from production builds so they never reach the live site.
+const showDrafts = import.meta.env.DEV;
+
 const posts: BlogPost[] = Object.entries(modules)
   .map(([path, raw]) => {
     const { data, content } = parseFrontmatter<BlogFrontmatter>(raw);
@@ -49,11 +55,13 @@ const posts: BlogPost[] = Object.entries(modules)
         category: data.category ?? 'General',
         tags: Array.isArray(data.tags) ? data.tags : [],
         featured: Boolean(data.featured),
+        draft: Boolean(data.draft),
       },
       content,
       readingTime: estimateReadingTime(content),
     };
   })
+  .filter((post) => showDrafts || !post.frontmatter.draft)
   .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1));
 
 export function getAllPosts(): BlogPost[] {

@@ -1,6 +1,6 @@
 ---
 title: "Azure Governance and Identity"
-description: "Enforcing governance in Azure using ."
+description: "Building an Azure governance foundation: enterprise hierarchy, custom RBAC, mandatory tagging, and debugging the Policy evaluation engine."
 date: "2026-08-08"
 category: "Cloud Infrastructure"
 tags:
@@ -9,8 +9,6 @@ tags:
   - Custom RBAC
 featured: false
 ---
-
-# Building a Governance Foundation in Azure: Enterprise Hierarchy, Custom RBAC, and Policy Debugging
 
 When setting up an enterprise cloud environment, jumping straight into deploying Virtual Machines or virtual networks without a governance structure is a fast track to security vulnerabilities, unexpected costs, and management chaos.
 

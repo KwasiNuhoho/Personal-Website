@@ -7,15 +7,16 @@
   <url><loc>https://your-domain.netlify.app/resume</loc></url>
   <url><loc>https://your-domain.netlify.app/contact</loc></url>
   <url><loc>https://your-domain.netlify.app/projects/azure-infrastructure-lab</loc></url>
+  <url><loc>https://your-domain.netlify.app/projects/automated-security-playbooks</loc></url>
   <url><loc>https://your-domain.netlify.app/projects/active-directory-homelab</loc></url>
-  <url><loc>https://your-domain.netlify.app/projects/security-monitoring-lab</loc></url>
-  <url><loc>https://your-domain.netlify.app/projects/security-automation-threat-intelligence</loc></url>
-  <url><loc>https://your-domain.netlify.app/blog/Azure Governance and Identity</loc></url>
-  <url><loc>https://your-domain.netlify.app/blog/Azure Networking and Secure Access</loc></url>
-  <url><loc>https://your-domain.netlify.app/blog/AzureCompute</loc></url>
-  <url><loc>https://your-domain.netlify.app/blog/AzureStorage</loc></url>
-  <url><loc>https://your-domain.netlify.app/blog/azure-day-2-core-networking-secure-access-complete</loc></url>
-  <url><loc>https://your-domain.netlify.app/blog/azure-hub-and-spoke-networking</loc></url>
-  <url><loc>https://your-domain.netlify.app/blog/building-an-active-directory-homelab</loc></url>
-  <url><loc>https://your-domain.netlify.app/blog/getting-started-with-wazuh-siem</loc></url>
+  <url><loc>https://your-domain.netlify.app/projects/wifi-security-lab</loc></url>
+  <url><loc>https://your-domain.netlify.app/projects/incident-response-runbook</loc></url>
+  <url><loc>https://your-domain.netlify.app/projects/5g-backhaul-design</loc></url>
+  <url><loc>https://your-domain.netlify.app/blog/azure-compute</loc></url>
+  <url><loc>https://your-domain.netlify.app/blog/azure-governance-and-identity</loc></url>
+  <url><loc>https://your-domain.netlify.app/blog/azure-networking-and-secure-access</loc></url>
+  <url><loc>https://your-domain.netlify.app/blog/azure-storage</loc></url>
+  <url><loc>https://your-domain.netlify.app/blog/machine-readable-playbooks</loc></url>
+  <url><loc>https://your-domain.netlify.app/blog/wifi-attacks-in-a-lab</loc></url>
+  <url><loc>https://your-domain.netlify.app/blog/writing-a-runbook</loc></url>
 </urlset>

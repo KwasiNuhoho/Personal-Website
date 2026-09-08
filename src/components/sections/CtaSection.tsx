@@ -15,7 +15,7 @@ export function CtaSection() {
         <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
           <Link
             to="/resume"
-            className="inline-flex items-center justify-center gap-2 rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-mono text-sm font-medium text-[#12130f] hover:brightness-110 transition"
+            className="inline-flex items-center justify-center gap-2 rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-mono text-sm font-medium text-[var(--color-accent-contrast)] hover:brightness-110 transition"
           >
             <FileText className="h-4 w-4" /> View Resume
           </Link>

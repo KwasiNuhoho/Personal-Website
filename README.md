@@ -61,13 +61,27 @@ tags:
   - Wazuh
   - SIEM
 featured: false
+draft: false
 ---
 
 Your content in Markdown below the closing `---`.
 ```
 
 The post automatically appears on `/blog` and at `/blog/my-new-post` — no other code
-changes required. Supported: headings, code blocks with syntax highlighting, images,
+changes required.
+
+Notes on the fields:
+
+- **The filename is the URL.** `my-new-post.md` becomes `/blog/my-new-post`. Use
+  lowercase words separated by hyphens — spaces and capitals produce ugly percent-encoded
+  URLs.
+- **Don't repeat the title as an `# H1`** at the top of the body. `BlogPost.tsx` already
+  renders `title` as the page heading, so a leading `#` shows it twice.
+- **`draft: true`** keeps a post in the repo but off the live site. Drafts still render
+  during `npm run dev` so you can preview them, are stripped from production builds, and
+  are left out of `sitemap.xml`. Remove the line (or set it to `false`) to publish.
+- **`category`** is a single value and drives the filter buttons on `/blog`. Reuse an
+  existing one where you can — every new value adds another button. Supported: headings, code blocks with syntax highlighting, images,
 tables, lists, links, blockquotes, and inline code.
 
 Currently highlighted code languages: `bash`, `powershell`, `python`, `yaml`, `json`,
@@ -82,8 +96,13 @@ a `detail` block for the project's case-study page). The project automatically a
 on `/projects`, on the homepage if `featured: true`, and gets its own page at
 `/projects/your-slug`.
 
-To add screenshots or diagrams, drop image files under `public/projects/your-slug/` and
-reference them in that project's `detail.evidence` array.
+To add screenshots or diagrams, drop image files under `public/project-media/your-slug/`
+and reference them in that project's `detail.evidence` array. (They live under
+`project-media/` rather than `projects/` so the folder can never shadow the
+`/projects/:slug` route.)
+
+To link a full report or write-up PDF, put it in `public/reports/` and set
+`links.report` on the project — the detail page renders a "Full report (PDF)" button.
 
 ## 6. Replace the resume
 

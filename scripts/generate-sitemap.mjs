@@ -14,6 +14,9 @@ const staticRoutes = ['/', '/about', '/projects', '/blog', '/resume', '/contact'
 const blogDir = path.join(root, 'src/content/blog');
 const blogSlugs = readdirSync(blogDir)
   .filter((f) => f.endsWith('.md'))
+  // Drafts are excluded from production builds, so they must not be advertised
+  // in the sitemap either — otherwise crawlers get told about 404s.
+  .filter((f) => !/^draft:\s*true\s*$/m.test(readFileSync(path.join(blogDir, f), 'utf-8')))
   .map((f) => `/blog/${f.replace(/\.md$/, '')}`);
 
 const projectsSource = readFileSync(path.join(root, 'src/data/projects.ts'), 'utf-8');

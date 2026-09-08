@@ -7,10 +7,12 @@ tags:
   - Azure
   - Networking
   - Cloud
-featured: true
+featured: false
+draft: true
 ---
 
-> This is a sample post. Replace the content below with the specifics of your own Azure lab.
+> Draft. This came with the site template and is a placeholder, not my own write-up.
+> Replace it with the specifics of my own lab, then remove `draft: true` to publish.
 
 ## The problem with one flat network
 

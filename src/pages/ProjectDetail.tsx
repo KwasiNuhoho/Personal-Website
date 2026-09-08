@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ExternalLink, BookOpen, ArrowLeft, ImageOff } from 'lucide-react';
+import { ExternalLink, BookOpen, ArrowLeft, ImageOff, FileText } from 'lucide-react';
 import { Seo } from '@/components/Seo';
 import { Badge } from '@/components/ui/Badge';
 import { getProjectBySlug } from '@/data/projects';
@@ -64,6 +64,16 @@ export function ProjectDetail() {
               className="inline-flex items-center gap-2 rounded-md border border-[var(--color-border)] px-4 py-2 font-mono text-xs text-[var(--color-text)] hover:border-[var(--color-accent-2)] hover:text-[var(--color-accent-2)] transition-colors"
             >
               <BookOpen className="h-3.5 w-3.5" /> Blog post
+            </a>
+          )}
+          {project.links.report && (
+            <a
+              href={project.links.report}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-md border border-[var(--color-border)] px-4 py-2 font-mono text-xs text-[var(--color-text)] hover:border-[var(--color-accent-2)] hover:text-[var(--color-accent-2)] transition-colors"
+            >
+              <FileText className="h-3.5 w-3.5" /> Full report (PDF)
             </a>
           )}
           {project.links.demo && (

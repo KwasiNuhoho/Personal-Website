@@ -4,33 +4,41 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg: #f7f8fa;
+  --bg: #f6f8fa;
   --surface: #ffffff;
-  --surface-2: #f1f3f6;
-  --border: #e2e5ea;
-  --text: #10151f;
-  --text-muted: #5b6472;
-  --accent: #b9740b;
-  --accent-soft: #fbe9cf;
-  --accent-2: #0f9488;
-  --accent-2-soft: #d9f2ef;
-  --accent-ok: #16a34a;
-  --accent-danger: #d92d3b;
+  --surface-2: #eef1f5;
+  /* Structural borders. The previous #e2e5ea sat at ~1.15:1 against the page
+     background, so cards and inputs had no visible edge in light mode. */
+  --border: #cbd3de;
+  --text: #0d131c;
+  --text-muted: #4d5766;
+  /* Amber and teal keep the original identity, darkened to clear 4.5:1 as text.
+     --accent-contrast is what sits on top of an accent-filled surface. */
+  --accent: #8f5c07;
+  --accent-soft: #fbeacf;
+  --accent-contrast: #ffffff;
+  --accent-2: #0c6f66;
+  --accent-2-soft: #d6f0ed;
+  --accent-ok: #15803d;
+  --accent-danger: #c2202e;
+  --dot-grid: #d8dee7;
 }
 
 .dark {
   --bg: #0a0e14;
-  --surface: #10151f;
-  --surface-2: #171e2c;
-  --border: #232b3a;
-  --text: #e7ebf3;
-  --text-muted: #8b96aa;
-  --accent: #f0a94e;
-  --accent-soft: #2c2213;
-  --accent-2: #4fd1c5;
-  --accent-2-soft: #10211f;
-  --accent-ok: #4ade80;
-  --accent-danger: #f97066;
+  --surface: #111823;
+  --surface-2: #18202e;
+  --border: #303a4d;
+  --text: #eaeef6;
+  --text-muted: #9aa7bb;
+  --accent: #f2b062;
+  --accent-soft: #33260f;
+  --accent-contrast: #12130f;
+  --accent-2: #5fd9cd;
+  --accent-2-soft: #0f2422;
+  --accent-ok: #55e08a;
+  --accent-danger: #fb8177;
+  --dot-grid: #1e2637;
 }
 
 @theme inline {
@@ -46,6 +54,7 @@
   --color-text-muted: var(--text-muted);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
+  --color-accent-contrast: var(--accent-contrast);
   --color-accent-2: var(--accent-2);
   --color-accent-2-soft: var(--accent-2-soft);
   --color-accent-ok: var(--accent-ok);
@@ -90,7 +99,7 @@
   /* Subtle grid/topology backdrop used sparingly (hero only) */
   .bg-topology {
     background-image:
-      radial-gradient(circle at 1px 1px, var(--border) 1px, transparent 0);
+      radial-gradient(circle at 1px 1px, var(--dot-grid) 1px, transparent 0);
     background-size: 28px 28px;
   }
 }
