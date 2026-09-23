@@ -10,7 +10,8 @@ import yaml from 'react-syntax-highlighter/dist/esm/languages/prism/yaml';
 import json from 'react-syntax-highlighter/dist/esm/languages/prism/json';
 import typescript from 'react-syntax-highlighter/dist/esm/languages/prism/typescript';
 import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
-import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { oneDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { useTheme } from '@/lib/theme';
 
 SyntaxHighlighter.registerLanguage('bash', bash);
 SyntaxHighlighter.registerLanguage('shell', bash);
@@ -37,7 +38,7 @@ function formatDate(date: string) {
 export function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getPostBySlug(slug) : undefined;
-
+  const { theme } = useTheme();
   if (!post) {
     return <Navigate to="/blog" replace />;
   }
@@ -92,10 +93,11 @@ export function BlogPost() {
                 if (!isInline && match) {
                   return (
                     <SyntaxHighlighter
-                      style={oneDark}
+                      style={theme === 'dark' ? oneDark : oneLight}
                       language={match[1]}
                       PreTag="div"
                       customStyle={{ margin: 0, background: 'transparent' }}
+                      codeTagProps={{ style: { background: 'transparent' } }}
                     >
                       {String(children).replace(/\n$/, '')}
                     </SyntaxHighlighter>
