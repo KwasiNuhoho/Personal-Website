@@ -1,6 +1,6 @@
 ---
 title: "Azure Governance and Identity"
-description: "Building an Azure governance foundation: enterprise hierarchy, custom RBAC, mandatory tagging, and debugging the Policy evaluation engine."
+description: "Day 1 - Building an Azure governance foundation: enterprise hierarchy, custom RBAC, mandatory tagging, and debugging the Policy evaluation engine."
 date: "2026-08-08"
 category: "Cloud Infrastructure"
 tags:
@@ -10,7 +10,7 @@ tags:
 featured: false
 ---
 
-When setting up an enterprise cloud environment, jumping straight into deploying Virtual Machines or virtual networks without a governance structure is a fast track to security vulnerabilities, unexpected costs, and management chaos.
+When setting up an enterprise cloud environment, jumping straight into deploying virtual machines or virtual networks without a governance structure is a fast track to security vulnerabilities, unexpected costs, and management chaos.
 
 As part of a multi-day project to build a secure, observable Azure infrastructure, my first priority (**Day 1**) was establishing a solid identity and governance baseline. I needed to define resource boundaries, set up role-based access control (RBAC) following least-privilege principles, enforce resource tagging using Azure Policy, and set cost safeguards.
 
@@ -76,8 +76,6 @@ az group create --name rg-monitoring --location denmarkeast
 az group create --name rg-backup --location denmarkeast
 ```
 
-**Takeaway:** Running individual CLI commands repeatedly highlighted an obvious operational inefficiency. Manual, imperative commands don't scale well. Automating this deployment with declarative Infrastructure as Code (Bicep or ARM templates) is a logical optimization that I will address on Day 6.
-
 To create the resource groups, I used the bash command:
 
 ```bash
@@ -92,7 +90,7 @@ Where the resource names were `rg-network`, `rg-compute`, etc., as in my project
 
 ### Step 1
 
-Look up the unique Object ID for your group by its display name:
+I had to look up the unique Object ID for the particular group by its display name by using the bash command below:
 
 ```bash
 az ad group show --group "grp-developers" --query id -o tsv
@@ -116,12 +114,12 @@ az role assignment create \
   --scope "/subscriptions/12345.../resourceGroups/rg-compute"
 ```
 
-| Parameter / Component | Description |
+| **Parameter / Component** | **Description** |
 |---|---|
 | `az role assignment create` | Tells Azure: "Create a new permission link." |
-| `--assignee-object-id` | **WHO:** The unique ID of the group you fetched in Step 1. |
+| `--assignee-object-id` | **WHO:** The unique ID of the group I fetched in Step 1. |
 | `--assignee-principal-type Group` | **WHO TYPE:** Tells Azure "This ID belongs to a Group (not a User or Service Principal)." Adding this saves processing time and prevents temporary lookup errors. |
-| `--role` | **WHAT:** The permission level you want to grant (e.g., Reader, Contributor, Owner, or a custom role name). |
+| `--role` | **WHAT:** The permission level I want to grant (e.g., Reader, Contributor, Owner, or a custom role name). |
 | `--scope` | **WHERE:** The boundary where this permission applies. Everything inside this path inherits the permission. |
 
 Example for the auditors group:
@@ -144,7 +142,7 @@ To check if the roles have been assigned:
 az role assignment list --assignee "Azure subscription id" --all -o table
 ```
 
-| Flag / Component | What it actually means |
+| **Flag / Component** | **What it actually means** |
 |---|---|
 | `az role assignment list` | Tells Azure: "Show me existing permission links." |
 | `--assignee` | Tells Azure: "Filter the list to show ONLY permissions assigned to this specific group ID." |

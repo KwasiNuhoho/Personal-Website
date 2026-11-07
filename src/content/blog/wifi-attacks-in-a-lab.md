@@ -19,7 +19,7 @@ We built a controlled lab environment and ran three attacks end to end: deauthen
 
 The uncomfortable thing about deauth is that it isn't exploiting a bug. Management frames in 802.11 were historically unauthenticated, so a frame telling a client to disconnect is indistinguishable from a legitimate one. The attack is the protocol doing what it was specified to do.
 
-On its own it's a denial of service. Its real value to an attacker is as a setup move — it's how you force the reconnection that the other two attacks depend on.
+On its own it's a denial of service. Its real value to an attacker is as a setup move i.e. how you force the reconnection that the other two attacks depend on.
 
 ## Evil twin: the one that doesn't need any cryptography
 
@@ -37,7 +37,7 @@ Which means the entire security of the network at that point rests on passphrase
 
 ## What held up
 
-WPA3 addresses the handshake problem properly. Simultaneous Authentication of Equals removes the offline dictionary attack — you can capture all you want, there's nothing to grind against. Protected management frames close the deauth hole. On paper it's a genuine fix.
+WPA3 addresses the handshake problem properly. Simultaneous Authentication of Equals removes the posibility of the offline dictionary attack, there's nothing to grind against. Protected management frames close the deauth hole. On paper it's a genuine fix.
 
 In practice, mixed-mode deployments and the long tail of devices that don't support it mean many networks calling themselves WPA3 still fall back. The defence is real; the rollout is the problem.
 

@@ -26,13 +26,13 @@ Preparation isn't paperwork you do so the runbook looks complete. It's the part 
 
 We built explicit false-positive checks into the verification stage, and I'd argue that's the highest-value section in the document. Notifications about server misuse arrive from automated abuse-reporting systems, from other institutions, occasionally from people who have misread something.
 
-Treating every notification as confirmed compromise means you'll eventually take a production research server offline over a misattributed IP address. Once you've done that, the next report gets taken less seriously — which is exactly the wrong outcome.
+Treating every notification as confirmed compromise means you'll eventually take a production research server offline over a misattributed IP address. Once you've done that, the next report gets taken less seriously, which is exactly the wrong outcome.
 
 So verification has to be a real gate with real criteria, not a formality between detection and containment.
 
 ## Structure follows the lifecycle, not the org chart
 
-We organised the runbook around the incident response lifecycle: preparation, detection, verification, assessment, containment, eradication, recovery, and post-incident reflection. That's the standard shape and there's a good reason for it — it matches the order in which a person under pressure needs information.
+We organised the runbook around the incident response lifecycle: preparation, detection, verification, assessment, containment, eradication, recovery, and post-incident reflection. That's the standard shape and there's a good reason for it because it matches the order in which a person under pressure needs information.
 
 Writing it, the temptation is to organise by team, because that's how the organisation is arranged. Resist it. At two in the morning nobody is reading a runbook to find out what their department does. They're reading it to find out what happens next.
 
